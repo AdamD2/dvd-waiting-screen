@@ -24,6 +24,9 @@ def runLoadingScreen():
     # Create an instance of the image
     logo = Logo(dvdSettings, screen)
 
+    # Set the mouse to be invisible
+    pygame.mouse.set_visible(False)
+
     running = True
     while running:
         af.checkEvents()
