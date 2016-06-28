@@ -9,4 +9,4 @@ class Settings():
         self.bgColor = (0, 0, 0)
 
         # Movement settings
-        self.imageSpeed = 3
+        self.imageSpeed = 0.5
