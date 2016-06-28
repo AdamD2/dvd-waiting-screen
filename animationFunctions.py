@@ -1,4 +1,5 @@
 import sys
+import pygame
 
 def checkEvents():
     """Halt the program if a key is pressed."""
@@ -6,7 +7,7 @@ def checkEvents():
         if event.type == pygame.QUIT or event.type == pygame.KEYDOWN:
             sys.exit()
 
-def updateScreen(logo, dvdSettings):
+def updateScreen(screen, dvdSettings, logo):
     """Update the screen background and images."""
     # Fill the screen with the background color
     screen.fill(dvdSettings.bgColor)

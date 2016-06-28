@@ -6,7 +6,7 @@ class Settings():
         # Screen settings
         self.screenWidth = 1366
         self.screenHeight = 768
-        self.bgColor = (255, 255, 255)
+        self.bgColor = (0, 0, 0)
 
         # Movement settings
         self.imageSpeed = 3

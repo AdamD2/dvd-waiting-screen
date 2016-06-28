@@ -5,6 +5,7 @@
 #          logo bounces off the walls and moves around the screen.
 
 import pygame
+import animationFunctions as af
 
 from settings import Settings
 from logo import Logo
@@ -26,6 +27,6 @@ def runLoadingScreen():
     running = True
     while running:
         af.checkEvents()
-        af.updateScreen(logo, dvdSettings)
+        af.updateScreen(screen, dvdSettings, logo)
 
 runLoadingScreen()

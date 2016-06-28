@@ -10,7 +10,7 @@ class Logo():
         # Load the image and get its dimensions
         self.image = pygame.image.load('images/logo.bmp')
         self.rect = self.image.get_rect()
-        self.screenRect = self.image.screen.get_rect()
+        self.screenRect = screen.get_rect()
 
         # Start the logo in the middle of the screen
         self.rect.centerx = self.screenRect.centerx
@@ -39,12 +39,12 @@ class Logo():
         # Update the center value.
         if self.movingUp:
             self.center += self.dvdSettings.imageSpeed * sin(30)
-        elif !self.movingUp:
+        elif not self.movingUp:
             self.center -= self.dvdSettings.imageSpeed * sin(30)
         
         if self.movingRight:
             self.center += self.dvdSettings.imageSpeed * cos(30)
-        elif !self.movingRight:
+        elif not self.movingRight:
             self.center -= self.dvdSettings.imageSpeed * cos(30)
 
     def blitme(self):
