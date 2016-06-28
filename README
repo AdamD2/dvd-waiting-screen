@@ -1,1 +1,9 @@
-A DVD waiting screen. You will need the pygame module to run this program.
+This program emulates a classic DVD waiting screen, where the logo moves around
+the screen, changing direction if it encounters a wall at the edge of the
+screen. 
+
+The logo 'logo.bmp' in the 'images/' directory can be switched out with
+anything that fits within the resolution that can be found and changed in the
+settings.py class. 
+
+You will need the pygame module to run this program.
