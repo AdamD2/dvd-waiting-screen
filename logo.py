@@ -40,14 +40,14 @@ class Logo():
 
         # Update the center value.
         if self.movingUp:
-            self.verticalCenter += self.dvdSettings.imageSpeed * math.sin(30)
+            self.verticalCenter += self.dvdSettings.imageSpeed * math.sin(30) * 1
         elif not self.movingUp:
-            self.verticalCenter -= self.dvdSettings.imageSpeed * math.sin(30)
+            self.verticalCenter -= self.dvdSettings.imageSpeed * math.sin(30) * 1
         
         if self.movingRight:
-            self.horizontalCenter += self.dvdSettings.imageSpeed * math.cos(30)
+            self.horizontalCenter += self.dvdSettings.imageSpeed * math.cos(30) * 8
         elif not self.movingRight:
-            self.horizontalCenter -= self.dvdSettings.imageSpeed * math.cos(30)
+            self.horizontalCenter -= self.dvdSettings.imageSpeed * math.cos(30) * 8
 
         # Update rect object from self.center
         self.rect.centerx = self.horizontalCenter
