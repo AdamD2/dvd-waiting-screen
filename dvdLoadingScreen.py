@@ -27,7 +27,7 @@ def runLoadingScreen():
     running = True
     while running:
         af.checkEvents()
-        logo.update()
+        logo.update(dvdSettings)
         af.updateScreen(screen, dvdSettings, logo)
 
 runLoadingScreen()

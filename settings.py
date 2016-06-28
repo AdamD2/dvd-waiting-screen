@@ -10,3 +10,5 @@ class Settings():
 
         # Movement settings
         self.imageSpeed = 0.5
+        self.yScalar = 1
+        self.xScalar = 8

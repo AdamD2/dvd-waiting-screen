@@ -25,7 +25,7 @@ class Logo():
         self.movingUp = True
         self.movingRight = True
 
-    def update(self):
+    def update(self, dvdSettings):
         """Update the logo's position."""
         # Flip the movement flags if the ship reaches the edge of the screen
         if self.rect.top < 0:
@@ -40,14 +40,18 @@ class Logo():
 
         # Update the center value.
         if self.movingUp:
-            self.verticalCenter += self.dvdSettings.imageSpeed * math.sin(30) * 1
+            self.verticalCenter += (self.dvdSettings.imageSpeed * math.sin(30) 
+                * dvdSettings.yScalar)
         elif not self.movingUp:
-            self.verticalCenter -= self.dvdSettings.imageSpeed * math.sin(30) * 1
+            self.verticalCenter -= (self.dvdSettings.imageSpeed * math.sin(30)
+                * dvdSettings.yScalar)
         
         if self.movingRight:
-            self.horizontalCenter += self.dvdSettings.imageSpeed * math.cos(30) * 8
+            self.horizontalCenter += (self.dvdSettings.imageSpeed * math.cos(30)
+                * dvdSettings.xScalar)
         elif not self.movingRight:
-            self.horizontalCenter -= self.dvdSettings.imageSpeed * math.cos(30) * 8
+            self.horizontalCenter -= (self.dvdSettings.imageSpeed * math.cos(30)
+                * dvdSettings.xScalar)
 
         # Update rect object from self.center
         self.rect.centerx = self.horizontalCenter
