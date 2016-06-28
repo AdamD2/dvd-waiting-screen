@@ -1,4 +1,5 @@
 import pygame
+import math
 
 class Logo():
     
@@ -17,7 +18,8 @@ class Logo():
         self.rect.centery = self.screenRect.centery
 
         # Decimal value to store the center of the logo for complex movement
-        self.center = float(self.rect.centerx)
+        self.verticalCenter = float(self.rect.centery)
+        self.horizontalCenter = float(self.rect.centerx)
 
         # Movement flags, where up and right are positive
         self.movingUp = True
@@ -25,27 +27,35 @@ class Logo():
 
     def update(self):
         """Update the logo's position."""
-        # Flip the movement flags if the ship reaches the top of the screen
+        # Flip the movement flags if the ship reaches the edge of the screen
         if self.rect.top == 0:
-            movingUp = False
+            self.movingUp = False
         elif self.rect.bottom == self.screenRect.height:
-            movingUp = True
+            self.movingUp = True
 
         if self.rect.left == 0:
-            movingRight = True
+            self.movingRight = True
         elif self.rect.right == self.screenRect.right:
-            movingRight = False 
+            self.movingRight = False 
 
         # Update the center value.
         if self.movingUp:
-            self.center += self.dvdSettings.imageSpeed * sin(30)
+            self.verticalCenter += self.dvdSettings.imageSpeed * math.sin(30)
+            print("Moving up.")
         elif not self.movingUp:
-            self.center -= self.dvdSettings.imageSpeed * sin(30)
+            self.verticalCenter -= self.dvdSettings.imageSpeed * math.sin(30)
+            print("Moving down.")
         
         if self.movingRight:
-            self.center += self.dvdSettings.imageSpeed * cos(30)
+            self.horizontalCenter += self.dvdSettings.imageSpeed * math.cos(30)
+            print("Moving right.")
         elif not self.movingRight:
-            self.center -= self.dvdSettings.imageSpeed * cos(30)
+            self.horizontalCenter -= self.dvdSettings.imageSpeed * math.cos(30)
+            print("Moving left.")
+
+        # Update rect object from self.center
+        self.rect.centerx = self.horizontalCenter
+        self.rect.centery = self.verticalCenter
 
     def blitme(self):
         """Draw the logo at its current location."""
